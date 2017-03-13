@@ -28,36 +28,26 @@ class PesquisaCotep extends Component {
               <div className="col-lg-4 col-sm-6 col-xs-12">
                 <TextField
                   hintText="xxx.xxx"
-                  type="date"
-                  floatingLabelText="Número do processo"
+                  floatingLabelText="Text field"
                   fullWidth={true}
                 />
               </div>
               <div className="col-lg-4 col-sm-6 col-xs-12">
                 <TextField
                   hintText="aaaa"
-                  floatingLabelText="Ano"
+                  type='number'
+                  floatingLabelText="Number field"
                   fullWidth={true}
                 />
               </div>
               <div className="col-lg-4 col-sm-6 col-xs-12">
                 <TextField
-                  floatingLabelText="Linha de fornecimento"
+                  floatingLabelText="Text"
                   fullWidth={true}
                 />
               </div>
-              <div className="col-lg-8 col-sm-12 col-xs-12">
-                <TextField
-                  floatingLabelText="Um campo"
-                  fullWidth={true}
-                />
-              </div>
-              <div className="col-lg-8 col-sm-12 col-xs-12">
 
-                {/*<AutoCompleteApi perPage="30"></AutoCompleteApi>*/}
-
-              </div>
-
+              
               <div className="col-xs-12">
 
                 <ChipInputApi></ChipInputApi>

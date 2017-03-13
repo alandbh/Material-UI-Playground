@@ -177,20 +177,7 @@ class Main extends Component {
 
           <div>
             <Card style={{marginTop: 20}}>
-              <table>
-                <tbody>
-                  <tr>
-                    <td>a</td>
-                    <td>b</td>
-                    <td>c</td>
-                  </tr>
-                  <tr>
-                    <td>a</td>
-                    <td>b</td>
-                    <td>c</td>
-                  </tr>
-                </tbody>
-              </table>
+              
               <DataTables
                 title={'Nome dos objetos encontrados'}
                 height={'auto'}

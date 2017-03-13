@@ -127,7 +127,7 @@ class App extends Component {
                       <div className="row">
                         <div className="col-xs-12">
                           <div className="box">
-                            {/*<DataTable></DataTable>*/}
+                            <DataTable></DataTable>
                           </div>
                         </div>
                       </div>

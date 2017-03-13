@@ -111,7 +111,7 @@ componentDidMount(){
 
       <div className="muiltiselect-container">
         <AutoComplete
-          floatingLabelText="Type 'peah', fuzzy search"
+          floatingLabelText="Github user"
           filter={AutoComplete.fuzzyFilter}
           dataSource={this.state.dados}
           maxSearchResults={10}
