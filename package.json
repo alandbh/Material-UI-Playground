@@ -1,0 +1,31 @@
+{
+  "name": "mui",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "css-loader": "^0.26.4",
+    "react-scripts": "0.9.4",
+    "style-loader": "^0.13.2"
+  },
+  "dependencies": {
+    "axios": "^0.15.3",
+    "babel-polyfill": "^6.23.0",
+    "classnames": "^2.2.5",
+    "flexboxgrid": "^6.3.1",
+    "lowdb": "^0.16.0",
+    "material-ui": "^0.17.0",
+    "material-ui-chip-input": "^0.13.1",
+    "material-ui-datatables": "^0.16.7",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-flexbox-grid": "^0.10.2",
+    "react-tap-event-plugin": "^2.0.1",
+    "save": "^2.3.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
