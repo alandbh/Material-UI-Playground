@@ -64,18 +64,22 @@ class AutoCompleteApi extends Component {
 
   handleUpdateInput = (value) => {
       let component = this;
-      let _url = 'https://api.github.com/search/users?q=' + value + '&order=asc&page=1&per_page=30';
-      component.setState({
-        textInserted : value,
-        url : _url,
-      });
-      setTimeout(function () {
+      if (value.length >= 2) {
+        let _url = 'https://api.github.com/search/users?q=' + value + '&order=asc&page=1&per_page=30';
+        setTimeout(function () {
+          component.setState({
+            textInserted : value,
+            url : _url,
+          });
 
+        }, 300);
 
         console.log('text: ' + component.state.url);
+
         component.componentDidMount();
 
-      }, 500);
+      }
+
     };
 
 componentDidMount(){
