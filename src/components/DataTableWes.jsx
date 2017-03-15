@@ -4,7 +4,7 @@ import getMuiTheme            from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider       from 'material-ui/styles/MuiThemeProvider';
 import { Card }               from 'material-ui/Card';
 import DataTables             from 'material-ui-datatables';
-import FakeAPI                from './FakeAPI';
+import CallAPI                from './DataTableWesContainer';
 import Avatar                 from 'material-ui/Avatar';
 
 const muiTheme = getMuiTheme({
@@ -16,14 +16,14 @@ const muiTheme = getMuiTheme({
 
 const TABLE_COLUMNS_SORT_STYLE = [
     {
-        key: 'avatar_url',
+        key: 'avatar_urls.24',
         label: '',
         style: {
             width: 25,
         },
     },
     {
-        key: 'login',
+        key: 'name',
         label: 'Login',
         sortable: true,
         style: {
@@ -58,7 +58,7 @@ class DataTableWes extends Component {
     }
 
     componentDidMount() {
-        FakeAPI(this.state.currentPage, this.state.rowSize, this.state.sort,
+        CallAPI(this.state.currentPage, this.state.rowSize, this.state.sort,
             this.state.order, this.state.filter, (result) => {
                 this.setState({
                     total: result.count,
@@ -69,8 +69,7 @@ class DataTableWes extends Component {
     }
 
     handleSortOrderChange(key, order) {
-        FakeAPI(this.state.currentPage, this.state.rowSize, key,
-            order, this.state.filter, (result) => {
+        CallAPI(this.state.currentPage, this.state.rowSize, key, order, this.state.filter, (result) => {
                 this.setState({
                     total: result.count,
                     data: result.data,
@@ -83,8 +82,7 @@ class DataTableWes extends Component {
 
     handleFilterValueChange(value) {
         const page = 1;
-        FakeAPI(page, this.state.rowSize, this.state.sort,
-            this.state.order, value, (result) => {
+        CallAPI(page, this.state.rowSize, this.state.sort, this.state.order, value, (result) => {
                 this.setState({
                     total: result.count,
                     data: result.data,
@@ -97,8 +95,7 @@ class DataTableWes extends Component {
 
     handlePreviousPageClick() {
         const page = this.state.currentPage - 1;
-        FakeAPI(page, this.state.rowSize, this.state.sort,
-            this.state.order, this.state.filter, (result) => {
+        CallAPI(page, this.state.rowSize, this.state.sort, this.state.order, this.state.filter, (result) => {
                 this.setState({
                     total: result.count,
                     data: result.data,
@@ -110,8 +107,7 @@ class DataTableWes extends Component {
 
     handleNextPageClick() {
         const page = this.state.currentPage + 1;
-        FakeAPI(page, this.state.rowSize, this.state.sort,
-            this.state.order, this.state.filter, (result) => {
+        CallAPI(page, this.state.rowSize, this.state.sort, this.state.order, this.state.filter, (result) => {
                 this.setState({
                     total: result.count,
                     data: result.data,
@@ -126,8 +122,7 @@ class DataTableWes extends Component {
         if ((page - 1) * rowSize > this.state.total) {
             page = 1;
         }
-        FakeAPI(page, rowSize, this.state.sort,
-            this.state.order, this.state.filter, (result) => {
+        CallAPI(page, rowSize, this.state.sort, this.state.order, this.state.filter, (result) => {
                 this.setState({
                     total: result.count,
                     data: result.data,
@@ -140,7 +135,7 @@ class DataTableWes extends Component {
 
     formatData() {
         return this.state.data.map((item) => {
-            item.avatar_url = <Avatar size={30} src={item.avatar_url}/>
+            item.avatar_urls = <Avatar size={30} src={item.avatar_urls}/>
             return item
         })
     }
