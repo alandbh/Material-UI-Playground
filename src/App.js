@@ -1,5 +1,5 @@
-import React, { Component }   from 'react';
-import injectTapEventPlugin   from 'react-tap-event-plugin';
+import React, { Component }         from 'react';
+import injectTapEventPlugin         from 'react-tap-event-plugin';
 import { indigo500, red500 }  from 'material-ui/styles/colors';
 import MuiThemeProvider       from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme            from 'material-ui/styles/getMuiTheme';
@@ -7,8 +7,9 @@ import AppBar                 from 'material-ui/AppBar';
 import Paper                  from 'material-ui/Paper';
 import MainNavigator          from './components/MainNavigator';
 import PesquisaCotep          from './components/PesquisaCotep';
-import DataTableWes           from './components/DataTableWes';
-import DataTable              from './components/DataTable';
+import AutoCompleteField          from './components/AutoCompleteField';
+import DataTableUsers         from './components/DataTableUsers';
+import DataTablePosts         from './components/DataTablePosts';
 import './App.css';
 import './css/flexboxgrid.css';
 import './components/css/materialize.css';
@@ -91,10 +92,18 @@ class App extends Component {
                                     <div className="col-xs-12">
                                         <Paper style={stylePaperContent} zDepth={2}>
 
+                                            {/*<div className="row">*/}
+                                            {/*<div className="col-xs-12">*/}
+                                            {/*<div className="box">*/}
+                                            {/*<PesquisaCotep/>*/}
+                                            {/*</div>*/}
+                                            {/*</div>*/}
+                                            {/*</div>*/}
+
                                             <div className="row">
                                                 <div className="col-xs-12">
                                                     <div className="box">
-                                                        <PesquisaCotep/>
+                                                        <AutoCompleteField/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -102,7 +111,7 @@ class App extends Component {
                                             <div className="row">
                                                 <div className="col-xs-12">
                                                     <div className="box">
-                                                        <DataTableWes/>
+                                                        <DataTableUsers/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -110,7 +119,7 @@ class App extends Component {
                                             <div className="row">
                                                 <div className="col-xs-12">
                                                     <div className="box">
-                                                        <DataTable/>
+                                                        <DataTablePosts/>
                                                     </div>
                                                 </div>
                                             </div>

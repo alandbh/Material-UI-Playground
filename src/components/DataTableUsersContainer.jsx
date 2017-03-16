@@ -1,5 +1,5 @@
-import low from 'lowdb';
-import axios from 'axios';
+import low      from 'lowdb';
+import axios    from 'axios';
 
 const fakeDB = low();
 
@@ -10,6 +10,7 @@ function callFakeDB(usersPaged) {
 }
 
 export default function (page, perPage, sort, order, filter, callback) {
+
     const start = (page - 1) * perPage;
     const end = page * perPage;
     var _page = ((page - 1) * perPage) + 1;
@@ -17,12 +18,9 @@ export default function (page, perPage, sort, order, filter, callback) {
 
     function setPage() {
 
-        let usersPaged = [];
-
-        axios.get('https://api.github.com/users')
+        axios.get('http://muiplayground-alandbh.c9users.io/wp-json/wp/v2/users')
             .then(function (response) {
-                let _usersPaged = response.data;
-                let usersPaged = _usersPaged;
+                let usersPaged = response.data;
                 console.log(usersPaged);
 
                 fakeDB.defaults({ data: usersPaged }).value();
@@ -31,12 +29,10 @@ export default function (page, perPage, sort, order, filter, callback) {
 
             })
             .catch(function (error) {
-                console.log(error);
-                //console.log(usersPaged);
-            });
-
-        //console.log(usersPaged);
-    };
+                    console.log(error);
+                }
+            );
+    }
 
     function callFilter() {
 

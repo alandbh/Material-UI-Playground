@@ -4,7 +4,7 @@ import getMuiTheme            from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider       from 'material-ui/styles/MuiThemeProvider';
 import { Card }               from 'material-ui/Card';
 import DataTables             from 'material-ui-datatables';
-import CallAPI                from './DataTableWesContainer';
+import CallAPI                from './DataTableUsersContainer';
 import Avatar                 from 'material-ui/Avatar';
 
 const muiTheme = getMuiTheme({
@@ -16,10 +16,18 @@ const muiTheme = getMuiTheme({
 
 const TABLE_COLUMNS_SORT_STYLE = [
     {
-        key: 'avatar_urls.24',
+        key: 'id',
+        label: 'ID',
+        sortable: false,
+        style: {
+            width: 5,
+        },
+    },
+    {
+        key: 'avatar_urls',
         label: '',
         style: {
-            width: 25,
+            width: 5,
         },
     },
     {
@@ -27,16 +35,24 @@ const TABLE_COLUMNS_SORT_STYLE = [
         label: 'Login',
         sortable: true,
         style: {
-            width: 100,
+            width: 50,
         },
     },
     {
-        key: 'id',
-        label: 'ID',
+        key: 'description',
+        label: 'Descrição',
+        sortable: false,
+        style: {
+            width: 70,
+        },
+    },
+    {
+        key: 'url',
+        label: 'Site',
         sortable: false,
     }];
 
-class DataTableWes extends Component {
+class DataTableUsers extends Component {
     constructor(props, context) {
         super(props, context);
         this.handleSortOrderChange = this.handleSortOrderChange.bind(this);
@@ -135,18 +151,16 @@ class DataTableWes extends Component {
 
     formatData() {
         return this.state.data.map((item) => {
-            item.avatar_urls = <Avatar size={30} src={item.avatar_urls}/>
+            item.avatar_urls = <Avatar size={30} src={item.avatar_urls['24']}/>
             return item
         })
     }
-
 
     render() {
         return (
             <MuiThemeProvider muiTheme={muiTheme}>
                 <div>
                     <div>
-
                         <Card style={{ marginTop: 20 }}>
                             <DataTables
                                 title={'Users'}
@@ -177,4 +191,4 @@ class DataTableWes extends Component {
     }
 }
 
-export default DataTableWes;
+export default DataTableUsers;
