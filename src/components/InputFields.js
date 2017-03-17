@@ -1,8 +1,8 @@
-import React, { Component }    from 'react';
-import TextField               from 'material-ui/TextField';
-import RaisedButton            from 'material-ui/RaisedButton';
-import ChipInputApi            from './ChipInputApi';
-import AutoComplete            from 'material-ui/AutoComplete';
+import React, { Component }             from 'react';
+import TextField                        from 'material-ui/TextField';
+import ChipInputApi                     from './ChipInputApi';
+import AutoComplete                     from 'material-ui/AutoComplete';
+import { CardTitle, Card, CardText }    from 'material-ui/Card';
 
 const cities = [
     "Abadia dos Dourados",
@@ -869,68 +869,68 @@ class InputFields extends Component {
     render() {
         return (
             <div className="pesquisa-cotep-container">
+                <Card className="m-b-card">
+                    <CardTitle title="Input Text's" subtitle="Inputs"/>
+                    <CardText>
+                        <div className="row">
+                            <div className="col-lg-4 col-sm-4 col-xs-12">
+                                <TextField
+                                    floatingLabelText="Text field"
+                                    fullWidth={true}
+                                />
+                            </div>
 
-                <div className="row">
-                    <div className="col-lg-4 col-sm-4 col-xs-12">
-                        <TextField
-                            floatingLabelText="Text field"
-                            fullWidth={true}
-                        />
-                    </div>
+                            <div className="col-lg-4 col-sm-4 col-xs-12">
+                                <TextField
+                                    hintText="aaaa"
+                                    type='number'
+                                    floatingLabelText="Number field"
+                                    fullWidth={true}
+                                />
+                            </div>
 
-                    <div className="col-lg-4 col-sm-4 col-xs-12">
-                        <TextField
-                            hintText="aaaa"
-                            type='number'
-                            floatingLabelText="Number field"
-                            fullWidth={true}
-                        />
-                    </div>
-
-                    <div className="col-lg-4 col-sm-4 col-xs-12">
-                        <TextField
-                            hintText="password"
-                            type='password'
-                            floatingLabelText="Password field"
-                            fullWidth={true}
-                        />
-                    </div>
-
-                    <div className="col-lg-4 col-sm-4 col-xs-12">
-                        <AutoComplete
-                            floatingLabelText="Case insensitive"
-                            filter={AutoComplete.caseInsensitiveFilter}
-                            dataSource={cities}
-                            maxSearchResults={5}
-                            fullWidth={true}
-                        />
-                    </div>
-
-                    <div className="col-lg-4 col-sm-4 col-xs-12">
-                        <AutoComplete
-                            floatingLabelText="Fuzzy search"
-                            filter={AutoComplete.fuzzyFilter}
-                            dataSource={cities}
-                            maxSearchResults={5}
-                            fullWidth={true}
-                        />
-                    </div>
-
-                    <div className="col-lg-4 col-sm-4 col-xs-12">
-                        <ChipInputApi/>
-                    </div>
-
-                </div>
-
-                <div className="row end-xs" style={{ marginTop: '25px' }}>
-                    <div className="col-xs-6">
-                        <div className="box">
-                            <RaisedButton label="Ação secundária"/>
-                            <RaisedButton label="Ação primária" primary={true}/>
+                            <div className="col-lg-4 col-sm-4 col-xs-12">
+                                <TextField
+                                    hintText="password"
+                                    type='password'
+                                    floatingLabelText="Password field"
+                                    fullWidth={true}
+                                />
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </CardText>
+                </Card>
 
+                <Card>
+                    <CardTitle title="Search Input's" subtitle="Inputs searching on API's"/>
+                    <CardText>
+                        <div className="row">
+                            <div className="col-lg-4 col-sm-4 col-xs-12">
+                                <AutoComplete
+                                    floatingLabelText="Case insensitive"
+                                    filter={AutoComplete.caseInsensitiveFilter}
+                                    dataSource={cities}
+                                    maxSearchResults={5}
+                                    fullWidth={true}
+                                />
+                            </div>
+
+                            <div className="col-lg-4 col-sm-4 col-xs-12">
+                                <AutoComplete
+                                    floatingLabelText="Fuzzy search"
+                                    filter={AutoComplete.fuzzyFilter}
+                                    dataSource={cities}
+                                    maxSearchResults={5}
+                                    fullWidth={true}
+                                />
+                            </div>
+
+                            <div className="col-lg-4 col-sm-4 col-xs-12">
+                                <ChipInputApi/>
+                            </div>
+                        </div>
+                    </CardText>
+                </Card>
             </div>
         );
     }

@@ -76,6 +76,8 @@ body:before {
     margin: 20px 18px 0;
 }
 
+/*--------------------- WESLEY CSS -----------------------*/
+
 ::selection {
     background: #E57373;
     color: #fff;
@@ -84,4 +86,8 @@ body:before {
 ::-moz-selection {
     background: #E57373;
     color: #fff;
+}
+
+.m-b-card {
+    margin-bottom: 5px;
 }

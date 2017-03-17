@@ -78,11 +78,12 @@ class App extends Component {
 
                         <div id="main-content" className="containerAAA">
 
-                            <AppBar title="Highest page title" zDepth={0} onLeftIconButtonTouchTap={this.handleToggle}
+                            <AppBar title="Material-UI Playgroungd" zDepth={0}
+                                    onLeftIconButtonTouchTap={this.handleToggle}
                                     className="app-bar"/>
 
                             <div className="App-header" style={{ backgroundColor: muiTheme.palette.primary1Color }}>
-                                <h2 style={{ paddingLeft: '1rem' }}>Contextual title</h2>
+                                <h2 style={{ paddingLeft: '1rem' }}>Playground</h2>
                             </div>
 
 
