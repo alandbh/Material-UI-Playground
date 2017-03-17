@@ -1,11 +1,5 @@
-import React, { PropTypes, Component } from 'react';
-
-
-import myTheme            from 'material-ui/styles/baseThemes/lightBaseTheme';
-import MuiThemeProvider   from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme        from 'material-ui/styles/getMuiTheme';
-
-import AutoCompleteApi              from './AutoCompleteApi';
+import React, { PropTypes, Component }  from 'react';
+import AutoCompleteApi                  from './AutoCompleteApi';
 import ChipInput from 'material-ui-chip-input';
 import Chip from 'material-ui/Chip';
 

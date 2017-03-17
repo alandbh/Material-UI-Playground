@@ -1,15 +1,14 @@
-import React, { Component }         from 'react';
-import injectTapEventPlugin         from 'react-tap-event-plugin';
-import { indigo500, red500 }  from 'material-ui/styles/colors';
-import MuiThemeProvider       from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme            from 'material-ui/styles/getMuiTheme';
-import AppBar                 from 'material-ui/AppBar';
-import Paper                  from 'material-ui/Paper';
-import MainNavigator          from './components/MainNavigator';
-import PesquisaCotep          from './components/PesquisaCotep';
-import AutoCompleteField          from './components/AutoCompleteField';
-import DataTableUsers         from './components/DataTableUsers';
-import DataTablePosts         from './components/DataTablePosts';
+import React, { Component }     from 'react';
+import injectTapEventPlugin     from 'react-tap-event-plugin';
+import { indigo500, red500 }    from 'material-ui/styles/colors';
+import MuiThemeProvider         from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme              from 'material-ui/styles/getMuiTheme';
+import AppBar                   from 'material-ui/AppBar';
+import Paper                    from 'material-ui/Paper';
+import MainNavigator            from './components/MainNavigator';
+import InputFields              from './components/InputFields';
+import DataTableUsers           from './components/DataTableUsers';
+import DataTablePosts           from './components/DataTablePosts';
 import './App.css';
 import './css/flexboxgrid.css';
 import './components/css/materialize.css';
@@ -92,18 +91,10 @@ class App extends Component {
                                     <div className="col-xs-12">
                                         <Paper style={stylePaperContent} zDepth={2}>
 
-                                            {/*<div className="row">*/}
-                                            {/*<div className="col-xs-12">*/}
-                                            {/*<div className="box">*/}
-                                            {/*<PesquisaCotep/>*/}
-                                            {/*</div>*/}
-                                            {/*</div>*/}
-                                            {/*</div>*/}
-
                                             <div className="row">
                                                 <div className="col-xs-12">
                                                     <div className="box">
-                                                        <AutoCompleteField/>
+                                                        <InputFields/>
                                                     </div>
                                                 </div>
                                             </div>
