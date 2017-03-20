@@ -15,26 +15,21 @@ const muiTheme = getMuiTheme({
 
 const TABLE_COLUMNS_SORT_STYLE = [
     {
-        key: 'title',
-        label: 'Titulo',
-        sortable: true,
+        key: 'id',
+        label: 'identificador',
+        sortable: false,
         style: {
-            width: 300,
+            width: 10,
         },
     },
     {
-        key: 'status',
-        label: 'Status',
+        key: 'nomeunidade',
+        label: 'Nome',
         sortable: true,
         style: {
             width: 50,
         },
-    },
-
-    {
-        key: 'link',
-        label: 'Link',
-    },
+    }
 ];
 
 class DataTablePosts extends Component {
@@ -45,7 +40,6 @@ class DataTablePosts extends Component {
         this.handlePreviousPageClick = this.handlePreviousPageClick.bind(this);
         this.handleNextPageClick = this.handleNextPageClick.bind(this);
         this.handleRowSizeChange = this.handleRowSizeChange.bind(this);
-        this.formatData = this.formatData.bind(this);
 
         this.state = {
             data: [],
@@ -134,13 +128,6 @@ class DataTablePosts extends Component {
         );
     }
 
-    formatData() {
-        return this.state.data.map((item) => {
-            item.title = <span>{item.title.rendered}</span>;
-            return item
-        })
-    }
-
     render() {
         return (
             <MuiThemeProvider muiTheme={muiTheme}>
@@ -148,12 +135,12 @@ class DataTablePosts extends Component {
                     <div>
                         <Card style={{ marginTop: 20 }}>
                             <DataTables
-                                title={'Posts'}
+                                title={'Orgaõs'}
                                 height={'auto'}
                                 selectable={true}
                                 showRowHover={true}
                                 columns={TABLE_COLUMNS_SORT_STYLE}
-                                data={this.formatData()}
+                                data={this.state.data}
                                 showCheckboxes={false}
                                 showHeaderToolbar={true}
                                 onCellClick={this.handleCellClick}

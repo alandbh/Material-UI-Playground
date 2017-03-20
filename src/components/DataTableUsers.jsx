@@ -24,33 +24,21 @@ const TABLE_COLUMNS_SORT_STYLE = [
         },
     },
     {
-        key: 'avatar_urls',
+        key: 'avatar_url',
         label: '',
         style: {
             width: 5,
         },
     },
     {
-        key: 'name',
+        key: 'login',
         label: 'Login',
         sortable: true,
         style: {
             width: 50,
         },
-    },
-    {
-        key: 'description',
-        label: 'Descrição',
-        sortable: false,
-        style: {
-            width: 70,
-        },
-    },
-    {
-        key: 'url',
-        label: 'Site',
-        sortable: false,
-    }];
+    }
+];
 
 class DataTableUsers extends Component {
     constructor(props, context) {
@@ -151,7 +139,7 @@ class DataTableUsers extends Component {
 
     formatData() {
         return this.state.data.map((item) => {
-            item.avatar_urls = <Avatar size={30} src={item.avatar_urls['24']}/>
+            item.avatar_url = <Avatar size={30} src={item.avatar_url}/>
             return item
         })
     }
@@ -163,7 +151,7 @@ class DataTableUsers extends Component {
                     <div>
                         <Card style={{ marginTop: 20 }}>
                             <DataTables
-                                title={'Users'}
+                                title={'Users of GitHub'}
                                 height={'auto'}
                                 selectable={true}
                                 showRowHover={true}

@@ -18,7 +18,7 @@ export default function (page, perPage, sort, order, filter, callback) {
 
     function setPage() {
 
-        axios.get('http://muiplayground-alandbh.c9users.io/wp-json/wp/v2/users')
+        axios.get('https://api.github.com/users')
             .then(function (response) {
                 let usersPaged = response.data;
                 console.log(usersPaged);

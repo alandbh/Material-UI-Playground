@@ -18,7 +18,7 @@ export default function (page, perPage, sort, order, filter, callback) {
 
     function setPage() {
 
-        axios.get('https://synapi.herokuapp.com/api/orgaoseunidades')
+        axios.get('https://synapi.herokuapp.com/api/cidades')
             .then(function (response) {
                 let usersPaged = response.data;
                 console.log(usersPaged);
@@ -29,30 +29,32 @@ export default function (page, perPage, sort, order, filter, callback) {
 
             })
             .catch(function (error) {
-                console.log(error);
-            });
+                    console.log(error);
+                }
+            );
     }
 
     function callFilter() {
+
         if (filter !== '') {
-            const pattern = new RegExp(filter, 'i');
+            const pattern = new RegExp(filter.toLowerCase());
             setTimeout(() => {
                 const result = {
-                    count: fakeDB.get('data').filter(
-                        { status: { $regex: pattern } }).size().value(),
-                    data: fakeDB.get('data').filter(
-                        { status: { $regex: pattern } }).sort([sort], [order]).slice(start, end).value(),
+                    count: fakeDB.get('data').filter((data) => {
+                        return pattern.test(data.name.toLowerCase());
+                    }).size().value(),
+                    data: fakeDB.get('data').filter((data) => {
+                        return pattern.test(data.name.toLowerCase());
+                    }).orderBy([sort], [order]).slice(start, end).value(),
                 };
-                console.log(result)
                 callback(result);
             }, 200);
         } else {
             setTimeout(() => {
                 const result = {
                     count: fakeDB.get('data').size().value(),
-                    data: fakeDB.get('data').sort([sort], [order]).slice(start, end).value(),
+                    data: fakeDB.get('data').orderBy([sort], [order]).slice(start, end).value(),
                 };
-                console.log(result)
                 callback(result);
             }, 200);
         }
