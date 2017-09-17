@@ -1,3 +1,11 @@
+## Why "playground"?
+
+This is an application for my co-workers and me to improve our skills in AAA and BBB.  
+Since it's a playground, there's no stupid idea here. 
+You can try everything under a condition: you must show what you learned.
+
+## Yes, we've used all the magic of [Create React App](https://github.com/facebookincubator/create-react-app)
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
