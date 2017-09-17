@@ -1,6 +1,6 @@
 ## Why "playground"?
 
-This is an application for my co-workers and me to improve our skills in AAA and BBB.  
+This is an application for my co-workers and me to improve our skills in React and Material UI Framework.  
 Since it's a playground, there's no stupid idea here. 
 You can try everything under a condition: you must show what you learned.
 
