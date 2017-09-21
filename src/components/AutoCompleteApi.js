@@ -64,7 +64,7 @@ class AutoCompleteApi extends Component {
         return (
             <div className="muiltiselect-container">
                 <AutoComplete
-                    floatingLabelText="Github user"
+                    floatingLabelText="Github users search (via API)"
                     filter={AutoComplete.fuzzyFilter}
                     dataSource={this.state.dados}
                     maxSearchResults={10}
