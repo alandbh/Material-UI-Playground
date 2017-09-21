@@ -151,7 +151,7 @@ class DataTableUsers extends Component {
                     <div>
                         <Card style={{ marginTop: 20 }}>
                             <DataTables
-                                title={'Users of GitHub'}
+                                title={'GitHub users (via API)'}
                                 height={'auto'}
                                 selectable={true}
                                 showRowHover={true}
