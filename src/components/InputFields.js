@@ -75,7 +75,7 @@ class InputFields extends Component {
                         <div className="row">
                             <div className="col-lg-4 col-sm-4 col-xs-12">
                                 <AutoComplete
-                                    floatingLabelText="Case insensitive"
+                                    floatingLabelText="Minas Gerais cities (Case insensitive)"
                                     filter={AutoComplete.caseInsensitiveFilter}
                                     dataSource={this.state.data}
                                     maxSearchResults={5}
@@ -85,7 +85,7 @@ class InputFields extends Component {
 
                             <div className="col-lg-4 col-sm-4 col-xs-12">
                                 <AutoComplete
-                                    floatingLabelText="Fuzzy search"
+                                    floatingLabelText="Minas Gerais cities (Fuzzy search)"
                                     filter={AutoComplete.fuzzyFilter}
                                     dataSource={this.state.data}
                                     maxSearchResults={5}
